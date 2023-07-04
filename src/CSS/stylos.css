@@ -7,26 +7,26 @@
     display: flex;
     justify-content: center;
     justify-items: center;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
   }
   h1 {
     text-align: center;
-    margin-top: -10px;
+    margin-top: -25vmin;
     color: rgb(3, 2, 2);
-    font-size: 20px;
+    text-shadow: 10px 5px 5px gray;
+    font-size: 5vmin;
     
   }
   
   .contenedor {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    width: 60%;
-    display: flex;
+    width: 110vmin;
+    height: 100vmin;
+    margin-bottom: 10vmin;
     justify-content: center;
     flex-direction: column;
-    padding: 30px;
-    border: 2px solid rgb(104, 86, 99);
-    border-top : 30px solid rgb(185, 106, 159);
+    padding: 30vmin;
+    border: 1vmin solid rgb(104, 86, 99);
+    border-top : 8vmin solid rgb(185, 106, 159);
    
   }
   .contador {
@@ -59,61 +59,63 @@
   }
   
   .buscar {
-    margin-right: -30px;
-    width: 5cap;
+    margin: 0vmin;
+   text-align: center;
+   align-items: center;
+   justify-content: center;
   }
   
   
   .vacio {
-    padding: 50px;
-    width: -50px;
-    margin-top: -40px;
+    padding: 8vmin;
+    width: -0vmin;
+    margin-top: px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: rgb(82, 80, 80);
-    margin-right: 10px;
+    margin-right: 10vmin;
     
   } 
   
   p {
+    margin-right: -80vmin;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    height: -50px;
-    margin: 100px
-    font-size: 50px;
-    
+    font-size: 3vmin;
   }
   
   input {
-    margin: 30px;
-    margin-top: -5px;
+    width: 40vmin;
+    height: 5vmin;
+    margin-left: -40vmin;
+    font-size: 3vmin;
   }
   
   .btn {
-    width: 60px;
-    height: 20px;
-    margin: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 13vmin;
+    height: 4vmin;
+    margin: -1vmin;
+    margin-left: -15vmin;
     display: flex;
-    margin-top: -20px;
+    margin-top: 2vmin;
     background-color: blueviolet;
     color: white;
    
   }
   .bloque {
-    width: 700px;
-    height: 250px;
-    margin-right: 50px;
-    padding: 15px;
+    margin-left: -20vmin;
+    width: 90vmin;
+    height: 40vmin;
+    display: flex;
     background-color: white;
     border: 1.5px solid #ccc;
-    text-align: center;
-    margin-top: -20px;
-    justify-content: center;
-    border-radius: 10px;
-    text-align: left;
+    margin-top: 3vmin;
+    border-radius: 2vmin;
     overflow: auto;
   
   }
