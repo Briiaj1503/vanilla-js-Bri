@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=gi, initial-scale=1.0" />
+    <title>Lista de tareas</title>
+    <link rel="stylesheet" href="./CSS/stylos.css" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1>"LISTA DE TAREAS"</h1>
+      <br />
 
-<head>
-	<title>Ejemplo básico</title>
-	<meta charset="UTF-8" />
-</head>
+      <div class="buscar">
+        <form>
+          <input type="text" placeholder="Agregar tarea.." type="text" />
+          <br />
+          <button class="btn">Agregar</button>
+        </form>
+        <div class="conteinercontador">
+          <div class="contador">Tareas <br />Completadas</div>
+          <div id="contador">0</div>
+          <br />
+          <br />
+          <br />
+        </div>
+      </div>
+      <!-- ya hay estilos -->
+      <div class="bloque">
+        <div class="li-contenedor">
+          <ul class="Lista"></ul>
 
-<body>
-	<h1>La aplicación esta corriendo!</h1>
+          <div class="vacio">
+            <p class="par">No hay tareas pendientes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<script src="./index.js" type="module"></script>
-</body>
-
+    <script src="./JS/index.js"></script>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/39efb12a6f.js"
+    crossorigin="anonymous"
+  ></script>
 </html>
