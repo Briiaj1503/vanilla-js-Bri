@@ -1,5 +1,5 @@
 // import { Btn } from "../JS/index.js";
-import { post } from "./api.js";
+import { deleteTask, post } from "./api.js";
 
 const input = document.querySelector("input");
 
@@ -7,7 +7,7 @@ const ul = document.querySelector("ul");
 const vacio = document.querySelector(".vacio");
 const contador = document.querySelector("#contador");
 
-function addTask(e) {
+async function addTask(e) {
   e.preventDefault();
 
   const text = input.value;
@@ -23,7 +23,16 @@ function addTask(e) {
     li.appendChild(Delete());
     input.value = "";
 
-    post({ text });
+    let task = {
+      task: text,
+      checked: false,
+    };
+
+    //envío la tarea a guardar
+    let postResponse = await post(task);
+
+    //Le asigno el id a la lista para después eliminarla
+    li.id = postResponse.id;
 
     vacio.style.display = "none";
   } else {
@@ -35,6 +44,7 @@ function checkbox() {
   let check = document.createElement("input");
   check.setAttribute("type", "checkbox");
   check.className = "btn-check";
+  check.checked = false;
 
   check.addEventListener("click", function () {
     if (check.checked) {
@@ -69,6 +79,7 @@ function Delete() {
       cuenta = cuenta - 1;
       contador.textContent = cuenta;
     }
+    deleteTask(item.id);
     ul.removeChild(item);
     // if (true) {
     //   console.log("verdadero")
