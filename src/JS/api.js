@@ -12,12 +12,12 @@ async function post(text) {
 }
 
 async function get() {
-  const response = await fetch(
-    "http://localhost:3000/api/task",
-    configuration("GET")
-  );
-  const tasks = await response.json();
-  return tasks;
+  const response = await fetch("http://localhost:3000/api/task", {
+    method: "GET",
+  });
+
+  const getTasks = await response.json();
+  return getTasks;
 }
 
 async function deleteTask(id) {
@@ -28,4 +28,17 @@ async function deleteTask(id) {
   return deleteTask;
 }
 
-export { post, get, deleteTask };
+async function updateTask(task_id, task) {
+  const response = await fetch("http://localhost:3000/api/task/" + task_id, {
+    method: "PUT",
+    headers: {
+      Accept: "application/json",
+      "content-Type": "application/json",
+    },
+    body: JSON.stringify(task),
+  });
+  const postTask = await response.json();
+  return postTask;
+}
+
+export { post, get, deleteTask, updateTask };

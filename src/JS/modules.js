@@ -1,55 +1,69 @@
 // import { Btn } from "../JS/index.js";
-import { deleteTask, post } from "./api.js";
+import { deleteTask, get, post, updateTask } from "./api.js";
 
-const input = document.querySelector("input");
-
-const ul = document.querySelector("ul");
-const vacio = document.querySelector(".vacio");
-const contador = document.querySelector("#contador");
+let vacio = document.querySelector(".vacio");
+var contador = document.querySelector("#contador");
 
 async function addTask(e) {
+  let input = document.querySelector("input");
   e.preventDefault();
 
-  const text = input.value;
+  let text = input.value.trim();
 
   if (text !== "") {
-    const li = document.createElement("li");
-    const parrafo = document.createElement("h4");
-    parrafo.textContent = text;
-
-    ul.appendChild(li);
-    li.appendChild(checkbox());
-    li.appendChild(parrafo);
-    li.appendChild(Delete());
-    input.value = "";
-
-    let task = {
+    let tasks = {
       task: text,
-      checked: false,
     };
-
-    //envío la tarea a guardar
-    let postResponse = await post(task);
-
-    //Le asigno el id a la lista para después eliminarla
-    li.id = postResponse.id;
-
-    vacio.style.display = "none";
+    let postResponse = await post(tasks);
+    createTask(postResponse.id, postResponse.task, postResponse.checked);
+    input.value = "";
   } else {
     window.alert("Ingresar texto");
   }
 }
 
-function checkbox() {
+function createTask(id, text, checked) {
+  let ul = document.querySelector("ul");
+  const li = document.createElement("li");
+  const parrafo = document.createElement("p");
+
+  parrafo.textContent = text;
+  li.id = id;
+
+  ul.appendChild(li);
+  li.appendChild(checkbox(checked));
+  li.appendChild(parrafo);
+  li.appendChild(Delete());
+  vacio.style.display = "none";
+}
+
+async function cargarTask() {
+  let tareas = await get();
+  let actualizarContador = 0;
+
+  tareas.forEach((Tarea) => {
+    createTask(Tarea.id, Tarea.task, Tarea.checked);
+  });
+
+  for (let i = 0; i < tareas.length; i++) {
+    if (tareas[i].checked == true) {
+      actualizarContador++;
+    }
+  }
+  contador.innerHTML = actualizarContador;
+}
+
+function checkbox(checked) {
+  
   let check = document.createElement("input");
   check.setAttribute("type", "checkbox");
   check.className = "btn-check";
-  check.checked = false;
+  check.checked = checked;
 
-  check.addEventListener("click", function () {
+  check.addEventListener("change", function (e) {
+    let item = e.target.parentElement;
     if (check.checked) {
       let cuenta = Number(contador.textContent);
-
       cuenta = cuenta + 1;
       contador.textContent = cuenta;
     } else {
@@ -58,34 +72,30 @@ function checkbox() {
       cuenta = cuenta - 1;
       contador.textContent = cuenta;
     }
+    updateTask(item.id, { checked: check.checked });
   });
 
   return check;
 }
 
 function Delete() {
+  let ul = document.querySelector("ul");
   const deleteBtn = document.createElement("i");
 
   deleteBtn.className = "fa-solid fa-trash";
 
   deleteBtn.addEventListener("click", (e) => {
     const item = e.target.parentElement;
-
     let check = item.querySelector("input");
 
     if (check.checked) {
       let cuenta = Number(contador.textContent);
-
       cuenta = cuenta - 1;
       contador.textContent = cuenta;
     }
     deleteTask(item.id);
     ul.removeChild(item);
-    // if (true) {
-    //   console.log("verdadero")
-    // }else {
-    //   console.log("Falso")
-    // }
+   
     const items = document.querySelectorAll("li");
     if (items.length === 0) {
       vacio.style.display = "block";
@@ -97,4 +107,4 @@ function Delete() {
   return deleteBtn;
 }
 
-export { addTask };
+export { addTask, cargarTask };
