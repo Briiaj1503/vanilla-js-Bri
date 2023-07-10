@@ -4,46 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="initial-scale=1.0" />
     <title>Lista de tareas</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./CSS/stylos.css" />
   </head>
+
   <body>
     <div class="contenedor">
-      <h1>"LISTA DE TAREAS"</h1>
-      <br />
+      <h1 class="titulo">"LISTA DE TAREAS"</h1>
+      <div class="contenedor-bajoTexto">
+        <div class="buscar">
+          <div class="elementos">
+            <input
+              class="caja-texto"
+              type="text"
+              placeholder="Agregar tarea.."
+              type="text"
+            />
+            <button class="btn w-100 my-3">Agregar</button>
+          </div>
 
-      <div class="buscar">
-        <form>
-          <input type="text" placeholder="Agregar tarea.." type="text" />
-          <br />
-          <button class="btn">Agregar</button>
-        </form>
-        <div class="conteinercontador">
-          <div class="contador">Tareas <br />Completadas</div>
-          <div id="contador">0</div>
-          <br />
-          <br />
-          <br />
-        </div>
-      </div>
-      <!-- ya hay estilos -->
-      <div class="bloque">
-        <div class="li-contenedor">
-          <ul class="Lista"></ul>
-
-          <div class="vacio">
-            <p class="par">No hay tareas pendientes.</p>
+          <div class="conteinercontador">
+            <label class="contador">Tareas <br />Completadas</label>
+            <span id="contador">0</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <script src="../src/JS/index.js" type="module"></script>
+      <!-- ya hay estilos -->
+      <div class="bloque">
+        <!-- <div class="li-contenedor"> -->
+        <ul class="Lista li-contenedor"></ul>
+
+        <div class="vacio">
+          <p class="par">No hay tareas pendientes.</p>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
     <script src="../src/JS/modules.js" type="module"></script>
     <script src="../src/JS/api.js" type="module"></script>
+    <script src="../src/JS/index.js" type="module"></script>
   </body>
+
   <script
     src="https://kit.fontawesome.com/39efb12a6f.js"
     crossorigin="anonymous"

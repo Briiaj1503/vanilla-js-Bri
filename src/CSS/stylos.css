@@ -1,163 +1,184 @@
- * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0%;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-  }
-  h1 {
-    text-align: center;
-    margin-top: -25vmin;
-    color: rgb(3, 2, 2);
-    text-shadow: 10px 5px 5px gray;
-    font-size: 5vmin;
-    
-  }
-  
-  .contenedor {
-    width: 110vmin;
-    height: 100vmin;
-    margin-bottom: 10vmin;
-    justify-content: center;
-    flex-direction: column;
-    padding: 30vmin;
-    border: 1vmin solid rgb(104, 86, 99);
-    border-top : 8vmin solid rgb(185, 106, 159);
-   
-  }
-  .contador {
-    width: -1000px;
-    margin-right: -50;
-    margin-left: 50px;
-    margin-top:-50px;
-    font-size: 15px;
-  }
-  
-  .conteinercontador {
-    display: flex;
-  margin-left: 450px;
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(https://i.pinimg.com/originals/86/ad/8d/86ad8d3854655a599dd214a150622c7f.gif);
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(3, 2, 2);
+  text-shadow: 10px 5px 5px gray;
+  font-size: 5vmin;
+  margin: 40px 0;
+}
+
+.contenedor {
+  background-image: url(./img.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 5px 5px black;
+  width: 50%;
+  margin: 50px auto;
+  /* height: 100vmin; */
+  /* margin-bottom: 10vmin; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* padding: 30vmin; */
+  border: 1vmin solid rgb(104, 86, 99);
+  border-top: 8vmin solid rgb(230, 77, 110);
+}
+
+.contador {
+  font-size: 30px;
+  text-align: center;
+  margin: 0 20px;
+}
+
+.conteinercontador {
+  display: flex;
+}
+
+#contador {
+  border: 1px solid black;
+  border-radius: 50px;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+}
+
+.buscar {
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.elementos {
+  display: flex;
+  flex-direction: column;
+}
+
+.vacio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: rgb(82, 80, 80);
+  margin-right: 10vmin;
+}
+
+p {
   margin-top: -20px;
-  }
-  
-  #contador {
-    border: 1px solid black;
-    border-radius: 50px;
-    margin-left: 20px;
-    margin-top: -9px;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    font-size: 12px;
-  }
-  
+  margin-left: 30px;
+  font-size: 25px;
+}
+
+.caja-texto {
+  border: 1px solid black;
+  width: 100%;
+  height: 5vmin;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 100%;
+  height: 50px;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+.bloque {
+  /* margin-left: -20vmin; */
+  width: 97%;
+  height: 90%;
+  /* height: 40vmin; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border: 1.5px solid #ccc;
+  margin: 30px auto;
+  border-radius: 2vmin;
+  overflow: auto;
+  background-color: rgb(235, 226, 239);
+}
+
+.li-contenedor {
+  width: 90%;
+  height: 100%;
+  color: rgb(0, 0, 0);
+  /* margin-top: 10vmin; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 20px;
+}
+
+.li-contenedor li {
+  display: flex;
+  margin: 10px 0;
+}
+
+li {
+  background-color: rgb(239, 234, 234);
+  border: 0.3vmin solid rgb(85, 84, 84);
+  padding: 1vmin;
+  width: 100%;
+  border-radius: 2vmin;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h4 {
+  margin: 10px;
+  padding: 5px;
+  width: 30px;
+  text-align: center;
+  justify-content: center;
+}
+
+i {
+  color: rgb(224, 103, 172);
+  /* margin-left: 700px; */
+  font-size: 40px;
+  display: flex;
+}
+
+.li-contenedor input {
+  color: rgb(220, 29, 137);
+  position: relative;
+  font-size: 25px;
+  width: 10%;
+  height: 40px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 450px) {
   .buscar {
-    margin: 0vmin;
-   text-align: center;
-   align-items: center;
-   justify-content: center;
-  }
-  
-  
-  .vacio {
-    padding: 8vmin;
-    width: -0vmin;
-    margin-top: px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: rgb(82, 80, 80);
-    margin-right: 10vmin;
-    
-  } 
-  
-  p {
-    margin-right: -80vmin;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    font-size: 3vmin;
+    flex-direction: column;
   }
-  
-  input {
-    width: 40vmin;
-    height: 5vmin;
-    margin-left: -40vmin;
-    font-size: 3vmin;
-  }
-  
-  .btn {
-    align-items: center;
-    justify-content: center;
-    width: 13vmin;
-    height: 4vmin;
-    margin: -1vmin;
-    margin-left: -15vmin;
-    display: flex;
-    margin-top: 2vmin;
-    background-color: blueviolet;
-    color: white;
-   
-  }
-  .bloque {
-    margin-left: -20vmin;
-    width: 90vmin;
-    height: 40vmin;
-    display: flex;
-    background-color: white;
-    border: 1.5px solid #ccc;
-    margin-top: 3vmin;
-    border-radius: 2vmin;
-    overflow: auto;
-  
-  }
-  
-  .li-contenedor {
-    width: 10vmin; 
-    height: 10vmin;
-    color: rgb(0, 0, 0);
-    margin-top: 10vmin;
-    font-size: 12vmin;
-  }
-  
-  
-  li {
-    background-color: rgb(239, 234, 234);
-    border: 0.3vmin solid rgb(85, 84, 84);
-    padding: 5vmin;
-    border-radius: 2vmin;
-    width: 40vmin;
-    height: 5vmin;
-    margin-left:20vmin;
-    margin-top: -20vmin;
-    display: flex;
-  }
-  h4 {
-    margin: 10px;
-    padding: 5px;
-    width: 30px;
-    text-align: center;
-    justify-content: center;
-  }
-  
-  i {
-    color: rgb(224, 103, 172);
-    margin-left: 500px;
-    margin-top: 16px;
-    font-size: 18px;
-  }
-  
-  .btn-check {
-    color: rgb(224, 103, 172);
-    margin-left: px;
-    margin-top: 16px;
-    font-size: 15vmin;
-  
-  }
-   
+}

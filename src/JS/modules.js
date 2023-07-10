@@ -34,6 +34,7 @@ function createTask(id, text, checked) {
   li.appendChild(checkbox(checked));
   li.appendChild(parrafo);
   li.appendChild(Delete());
+  
   vacio.style.display = "none";
 }
 
@@ -54,7 +55,6 @@ async function cargarTask() {
 }
 
 function checkbox(checked) {
-  
   let check = document.createElement("input");
   check.setAttribute("type", "checkbox");
   check.className = "btn-check";
@@ -95,7 +95,7 @@ function Delete() {
     }
     deleteTask(item.id);
     ul.removeChild(item);
-   
+
     const items = document.querySelectorAll("li");
     if (items.length === 0) {
       vacio.style.display = "block";
